@@ -25,17 +25,19 @@ export const ImageGalleryItem = image => {
   };
 
   return (
-    <StyledGalleryItem onClick={openModal}>
-      <StyledGalleryImage
-        src={image.image.webformatURL}
-        alt={image.image.tags}
-      />
+    <>
+      <StyledGalleryItem onClick={openModal}>
+        <StyledGalleryImage
+          src={image.image.webformatURL}
+          alt={image.image.tags}
+        />
+      </StyledGalleryItem>
       <ModalComponent
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         contentLabel="Example Modal"
         image={image}
       />
-    </StyledGalleryItem>
+    </>
   );
 };
